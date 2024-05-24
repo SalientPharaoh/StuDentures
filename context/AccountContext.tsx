@@ -4,6 +4,7 @@ import React, { createContext, useState, useContext, ReactNode, useEffect } from
 import { ethers } from 'ethers';
 import { contractABI, contractAddress } from '@/app/constants';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 interface AccountContextType {
     account: string | null;
@@ -38,6 +39,7 @@ export const AccountProvider: React.FC<{ children: ReactNode }> = ({ children })
             setContract(contractInstance);
         } else {
             console.error('MetaMask is not installed');
+            toast.error('MetaMask is not installed');
         }
     };
 

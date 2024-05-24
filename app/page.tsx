@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useAccount } from '../context/AccountContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Home() {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <>
+    <Toaster />
       <div className='h-screen flex flex-col justify-center text-center'>
         <motion.div className='relative flex items-center justify-center px-18 lg:px-30 text-center'>
           <motion.h1 className="tagline relative leading-20 font-jost text-3xl md:text-4xl font-bold">
